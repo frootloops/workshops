@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   end
 
   root 'categories#index'
+  get 'reviews' => 'reviews#index'
   devise_for :users
 end

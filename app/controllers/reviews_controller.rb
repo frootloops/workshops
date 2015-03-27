@@ -1,8 +1,14 @@
 class ReviewsController < ApplicationController
-  before_action :authenticate_user!, only: [:create]
+  before_action :authenticate_user!, only: [:create, :index]
 
   expose(:review)
+  expose(:reviews)
   expose(:product)
+  expose_decorated(:reviews)
+
+  def index
+    self.reviews = current_user.reviews.last(5)
+  end
 
   def edit
   end

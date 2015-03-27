@@ -1,0 +1,16 @@
+%h1 Listing reviews
+
+%table.table.table-striped
+  %tr
+    %th Date
+    %th Product
+    %th Rating
+    %th Content
+
+  - reviews.each do |review|
+    %tr
+      %td= review.date
+      %td= review.product_name
+      %td= review.rating
+      %td= review.content
+
